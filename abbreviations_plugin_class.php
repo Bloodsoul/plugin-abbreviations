@@ -48,7 +48,7 @@ class abbreviations extends plugin_generic
                         'icon'              => 'fa fa-list-alt',
                         'version'           => $this->version,
                         'author'            => $this->copyright,
-                        'description'       => 'Replace me!',
+                        'description'       => 'Abbreviations',
                         'long_description'  => 'Should be replaced by variables',
                         'homepage'          => 'https://eqdkp-plus.eu/',
                         'plus_version'      => '2.0',
@@ -58,6 +58,33 @@ class abbreviations extends plugin_generic
                         'plus_version'      => '2.0'
                 ));
         }
-}
+  
+        /**
+          * pre_install
+          * Define Installation
+          */
+        public function pre_install()
+        {
+                // include SQL and default configuration data for installation
+                include($this->root_path.'plugins/abbreviations/includes/sql.php');
 
+                // define installation
+                for ($i = 1; $i <= count($abbreviationsSQL['install']); $i++)
+                        $this->add_sql(SQL_INSTALL, $abbreviationsSQL['install'][$i]);
+        }
+        
+        /**
+          * post_uninstall
+          * Define Post Uninstall
+          */
+        public function post_uninstall(){
+                // include SQL data for uninstallation
+                include($this->root_path.'plugins/abbreviations/includes/sql.php');
+                // define uninstallation
+                for ($i = 1; $i <= count($abbreviationsSQL['uninstall']); $i++)
+                  $this->db->query($abbreviationsSQL['uninstall'][$i]);
+        }
+                        
+}
+                        
 ?>
