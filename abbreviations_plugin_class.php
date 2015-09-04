@@ -58,7 +58,6 @@ class abbreviations extends plugin_generic
                         'plus_version'      => '2.0'
                 ));
 
-		$this->add_permission('a', 'add', 'N', $this->user->lang('add'), array(2,3));
 		$this->add_permission('a', 'manage', 'N', $this->user->lang('manage'), array(2,3));
 
         }
