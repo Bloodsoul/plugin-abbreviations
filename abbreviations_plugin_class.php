@@ -45,7 +45,7 @@ class abbreviations extends plugin_generic
                         'code'              => 'abbreviations',
                         'path'              => 'abbreviations',
                         'template_path'     => 'plugins/abbreviations/templates/',
-                        'icon'              => 'fa fa-list-alt',
+                        'icon'              => 'fa fa-graduation-cap',
                         'version'           => $this->version,
                         'author'            => $this->copyright,
                         'description'       => $this->user->lang('abbreviations_short_desc'),
@@ -101,7 +101,7 @@ class abbreviations extends plugin_generic
                                 'link'  => 'plugins/abbreviations/admin/manage_abbreviations.php'.$this->SID,
                                 'text'  => $this->user->lang('abbreviations_manage_abbreviations'),
                                 'check' => 'a_abbreviations_manage',
-                                'icon'  => 'fa fa-picture-o'
+                                'icon'  => 'fa fa-graduation-cap'
                         ),
                 ));
                 return $admin_menu;
