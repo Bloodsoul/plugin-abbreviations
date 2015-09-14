@@ -29,5 +29,6 @@ $lang = array(
   // Description
   'abbreviations_short_desc'                    => 'Zeigt eine Erläuterung zu konfigurierten Abkürzungen.',
   'abbreviations_long_desc'                     => 'Konfiguriere oft genutzte Abkürzungen, um in Artikeln automatisch eine Erläuterung dazu anzuzeigen.',
+  'abbreviations_manage_abbreviations'          => 'Abkürzungen bearbeiten',
 );
 ?>
