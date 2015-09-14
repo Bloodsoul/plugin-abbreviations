@@ -87,7 +87,27 @@ class abbreviations extends plugin_generic
                 for ($i = 1; $i <= count($abbreviationsSQL['uninstall']); $i++)
                   $this->db->query($abbreviationsSQL['uninstall'][$i]);
         }
-                        
+
+        /**
+          * gen_admin_menu
+          * Generate the Admin Menu
+          */
+        private function gen_admin_menu()
+        {
+                $admin_menu = array (array(
+                        'name' => $this->user->lang('abbreviations'),
+                        'icon' => 'fa fa-picture-o',
+                        1 => array (
+                                'link'  => 'plugins/abbreviations/admin/manage_abbreviations.php'.$this->SID,
+                                'text'  => $this->user->lang('abbreviations_manage_abbreviations'),
+                                'check' => 'a_abbreviations_manage',
+                                'icon'  => 'fa fa-picture-o'
+                        ),
+                ));
+                return $admin_menu;
+        }
+
+
 }
                         
 ?>
