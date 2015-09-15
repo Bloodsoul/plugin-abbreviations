@@ -60,6 +60,7 @@ class abbreviations extends plugin_generic
 
 		$this->add_permission('a', 'manage', 'N', $this->user->lang('manage'), array(2,3));
 		$this->add_menu('admin', $this->gen_admin_menu());
+		$this->add_pdh_read_module('abbreviations_mappings');
 
         }
   
