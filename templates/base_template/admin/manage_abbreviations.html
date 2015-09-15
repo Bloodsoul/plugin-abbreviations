@@ -1,0 +1,72 @@
+<!-- IF S_NORMAL_HEADER -->
+<div class="breadcrumb-container">
+	<ul class="breamcrumb">
+		<li><a href="{EQDKP_CONTROLLER_PATH}{SID}" title="{L_home}"><i class="fa fa-home"></i></a></li>
+		<li><a href="{EQDKP_ROOT_PATH}admin/{SID}">{L_menu_admin_panel}</a>
+		<li class="current"><a href="">{L_abbreviations}: {L_abbreviations_manage_abbreviations}</a></li>
+	</ul>
+	<div class="clear"></div>
+</div>
+<!-- ENDIF -->
+
+<script type="text/javascript">
+	var id = {KEY};
+	function add_row(){
+		var new_module = $('#reference_row').html()+"";
+		new_module = new_module.replace(/KEY/g, id);
+		$("#abbreviations_form_table").find('tbody').append('<tr>'+new_module+'</tr>');
+		id++;
+	}
+	function delete_row(obj){
+		$(obj).parent().parent().remove();
+	}
+</script>
+
+<form name="dynamictemplate_settings" action="{ACTION}" method="post">
+	<div class="tableHeader floatRight">
+		<button type="button" onclick="add_row();"><i class="fa fa-plus"></i>{L_abbreviations_add_abbreviation}</button>
+	</div>
+	<div class="clear"></div>
+	<table id="abbreviations_form_table" class="table fullwidth colorswitch">
+		<thead>
+		<tr class="not-sortable">
+			<th width="10px"></th>
+			<th width="10px"></th>
+			<th width="20px;"></th>
+			<th style="min-width: 310px;width: 310px;">{L_abbreviations_abbreviation}</th>
+			<th>{L_abbreviations_long_text}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN modules -->
+		<tr>
+			<td><span class="ui-icon ui-icon-arrowthick-2-n-s" title="{L_dragndrop}"></span></td>
+			<td width="10px">#{modules.KEY}</td>
+			<td align="center"><input type="hidden" name="module[{modules.KEY}][id]" value="{modules.KEY}" class="dynamictemplate_id"/><i class="fa fa-trash-o fa-lg hand" title="{L_dynamictemplate_delete_module}"  onclick="delete_row(this);"></i></td>
+			
+			<td><input type="checkbox" name="module[{modules.KEY}][active]" value="1" {modules.ACTIVE}/></td>
+			<td>{DYNAMICTEMPLATE_<input type="text" name="module[{modules.KEY}][name]" value="{modules.NAME}" class="input dynamictemplate_name" />}
+			<br />&lt;!-- LISTENER {modules.LISTENER} --&gt;</td>
+			<td><textarea name="module[{modules.KEY}][value]" rows="4" class="input" style="height:{modules.OPTIONS_HEIGHT}px;width: 97%;">{modules.VALUE}</textarea></td>
+		</tr>
+		<!-- END modules -->
+		</tbody>
+	</table>
+	<div class="contentFooter" style="height:40px">
+		<button type="submit" name="save"><i class="fa fa-check"></i>{L_save}</button>
+	</div>
+	
+{CSRF_TOKEN}
+</form>
+
+<table style="display:none;">
+	<tr id="reference_row">
+		<td><span class="ui-icon ui-icon-arrowthick-2-n-s" title="{L_dragndrop}"></span></td>
+		<td width="10px">#KEY</td>
+		<td align="center"><input type="hidden" name="module[KEY][id]" value="KEY" class="dynamictemplate_id" /><i class="fa fa-trash-o fa-lg hand" title="{L_delte}" onclick="delete_row(this);"></i></td>
+		<td><input type="checkbox" name="module[KEY][active]" value="1" /></td>
+		<td>{DYNAMICTEMPLATE_<input type="text" name="module[KEY][name]" value="" class="input dynamictemplate_name" />}
+		<br />&lt;!-- LISTENER {LISTENER} --&gt;</td>
+		<td><textarea name="module[KEY][value]" rows="4" class="input" style="height:{modules.OPTIONS_HEIGHT}px;width: 97%;"></textarea></td>
+	</tr>
+</table>

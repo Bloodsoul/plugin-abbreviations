@@ -30,5 +30,6 @@ $lang = array(
   'abbreviations_short_desc'                    => 'Shows a desription to configured abbreviations.',
   'abbreviations_long_desc'                     => 'Configure often used abbreviations to automatically show a description in articles where they are used.',
   'abbreviations_manage_abbreviations'          => 'Manage abbreviations',
+  'abbreviations_add_abbreviation'		=> 'Add abbreviation',
 );
 ?>
