@@ -67,9 +67,9 @@ class Manage_Abbreviations extends page_generic {
                         'table_sort_dir'                => 'asc',
                         'table_sort_col'                => 0,
                         'table_presets'                 => array(
-                                array('name' => 'abbreviations_sort_id', 'sort' => true, 'th_add' => 'width="20"', 'td_add' => ''),
-                                array('name' => 'abbreviations_abbreviation', 'sort' => true, 'th_add' => '', 'td_add' => ''),
-                                array('name' => 'abbreviations_full_text',  'sort' => true, 'th_add' => 'width="20"', 'td_add' => 'style="text-align:right"'),
+                                array('name' => 'abbreviations_mappings_id', 'sort' => true, 'th_add' => 'width="20"', 'td_add' => ''),
+                                array('name' => 'abbreviations_mappings_abbreviation', 'sort' => true, 'th_add' => '', 'td_add' => ''),
+                                array('name' => 'abbreviations_mappings_full_text',  'sort' => true, 'th_add' => 'width="20"', 'td_add' => 'style="text-align:right"'),
                         ),
                 );
                 $hptt = $this->get_hptt($hptt_page_settings, $view_list, $view_list, array('%link_url%' => $this->root_path.'plugins/abbreviations/admin/manage_abbreviations.php', '%link_url_suffix%' => ''));

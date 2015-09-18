@@ -21,8 +21,7 @@ if ( !defined('EQDKP_INC') ){
 } 
 
 $module_lang = array(
-        'sort_id'               => '',
-        'editicon'              => '',
+        'id'               => '',
         'abbreviation'          => 'Abbreviation',
         'full_text'             => 'Full text',
 );
