@@ -78,8 +78,10 @@ class Manage_Abbreviations extends page_generic {
 
                 $item_count = count($view_list);
 
-                $this->tpl->assign_vars(array(
-                        'HPTT_COLUMN_COUNT'     => $hptt->get_column_count()
+		$this->tpl->assign_vars(array(
+			'ABBREVIATIONS_LIST'	=> $hptt->get_html_table($this->in->get('sort'), $page_suffix, $this->in->get('start', 0), 20, $strfootertext),
+			'PAGINATION'		=> generate_pagination('manage_abbreviations.php'.$sort_suffix, $item_count, 20, $this->in->get('start', 0)),
+			'HPTT_COLUMN_COUNT'	=> $hptt->get_column_count()
                 ));
 
                 // -- EQDKP ---------------------------------------------------------------
