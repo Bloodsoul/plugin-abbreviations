@@ -32,7 +32,7 @@ class abbreviations extends plugin_generic
         public $build      = '';
         public $copyright  = 'Bloodsoul';
         public $vstatus    = 'Beta';
-        protected static $apiLevel = 20;
+        protected static $apiLevel = 23;
 
         /**
           * Constructor
@@ -51,11 +51,11 @@ class abbreviations extends plugin_generic
                         'description'       => $this->user->lang('abbreviations_short_desc'),
                         'long_description'  => $this->user->lang('abbreviations_long_desc'),
                         'homepage'          => 'https://eqdkp-plus.eu/',
-                        'plus_version'      => '2.0',
+                        'plus_version'      => '2.2',
                         'build'             => $this->build,
                 ));
                 $this->add_dependency(array(
-                        'plus_version'      => '2.0'
+                        'plus_version'      => '2.2'
                 ));
 
 		$this->add_permission('a', 'manage', 'N', $this->user->lang('manage'), array(2,3));
